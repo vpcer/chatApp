@@ -1,0 +1,43 @@
+
+<head>
+  <title>Meteor Chat Application.</title>
+</head>
+
+<body>
+  <h1>Chatapp</h1>
+awdwad
+  {{> welcome }}
+  {{> input }}
+  <div id="messagesDiv">
+    {{> messages }}
+  </div>
+
+  <div class="login">
+      {{> loginButtons}}
+  </div>
+  <div class="ressetBtn">
+    {{> reset}}
+  </div>
+</body>
+
+<template name="reset">
+  <button onclick="clearMessages('messagesDiv')">Reset Chat</button>
+
+</template>
+
+<template name="welcome">
+  <p>
+    Let's chat.
+    {{currentUser.username}}
+  </p>
+</template>
+
+<template name="messages">
+  {{#each messages}}
+    <strong>{{name}}:</strong> {{message}}<br>
+  {{/each}}
+</template>
+
+<template name="input">
+  <p>Message: <input type="text" id="message"></p>
+</template>
